@@ -10,4 +10,4 @@ Returns:
         True -> username is valid
 """
 def validate_username(username):
-      return bool(re.fullmatch(r"[A-Za-z0-9]+", username))
+      return bool(re.fullmatch(r"[A-Za-z0-9]{3,30}", username))

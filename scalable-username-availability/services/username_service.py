@@ -36,7 +36,6 @@ class UsernameService:
     """
     def registerUsername(self, username):
        username = normalize(username)
-       
        if self.check_availability(username):
            self.db.add(username)
            self.bloom.add(username)
