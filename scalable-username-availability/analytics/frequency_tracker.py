@@ -1,9 +1,10 @@
 from collections import Counter
-
+import math
 class FrequencyTracker:
     """
     frequency tracker to analyze which usernames have more attempts
     """
+ 
     def __init__(self):
         self.counter = Counter()
 
@@ -24,3 +25,8 @@ class FrequencyTracker:
               list[tuple[str, int]]-> List of (username, attempt_count)
         """
         return self.counter.most_common(limit)
+    
+  
+
+    def theoretical_false_positive_rate(self,m,n,k):
+           return (1 - math.exp(-(k * n) / m) ) ** k
